@@ -1,370 +1,304 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
 
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
-
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Album example · Bootstrap v5.3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Gustavo Vianna</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic-icons.css">
+    <link rel="stylesheet" href="assets/css/Projects-Grid-Horizontal-images.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+</head>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
-
-    
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
+<body>
+    <section class="py-4 py-xl-5" style="padding: 49px 7px;">
+        <div class="container">
+            <div class="text-center p-4 p-lg-5">
+                <p class="fs-5 fw-bold text-primary mb-2" style="background: var(--bs-btn-disabled-color);color: rgb(255,255,255);">Portfolio</p>
+                <h1 class="display-2 fw-bold mb-4" data-aos="zoom-out" style="color: #ffffff;">Leonardo Dantas</h1>
+                <p class="fs-3" style="color: #ffffff;font-size: 20px;">Hi, I'm Leonardo! Welcome to my portfolio!<br>I'm&nbsp;<strong>Game Designer&nbsp;</strong>creating XR Games(VR/MR/AR) at ARVORE.<br>I'm also the co-founder of Sollarium Studio.</p><a class="btn btn-light fs-5 py-2 px-4" role="button" href="about-me.html">About me</a>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2>Professional Projects</h2>
+            </div>
+        </div>
+        <div class="row gy-4 row-cols-1 row-cols-md-2 justify-content-center">
+            <div class="col">
+                <p style="text-align: center;"><em>ARVORE Immersive Experiences</em></p>
+            </div>
+            <div class="col-auto col-xl-10 col-xxl-9 text-break" data-bss-hover-animate="pulse" style="width: 990px;">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100" style="height: 250px;width: 1200px;"><img class="rounded img-fluid d-block w-100 fit-cover" style="height:100%;" src="assets/img/Games/Carrossel/Universal%20Monsters.jpg" width="198" height="250" href="" data-bs-target="#modal-9" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="" data-bs-target="#modal-9" data-bs-toggle="modal">Universal Monster Arena</a></h4>
+                        <p style="width: 300px;">Universal Monsters Arena is a team deathmatch multiplayer game where two teams compete against each other in arenas for a team-victory, becoming one of 6 iconic movie monsters. Grab your friends, choose your monster, and get ready to battle it out. Available for 2-6 players.&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto col-xl-10 col-xxl-9 text-break" data-bss-hover-animate="pulse" style="width: 990px;">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100" style="height: 250px;width: 1200px;"><img class="rounded img-fluid d-block w-100 fit-cover" style="height:100%;" src="assets/img/Games/Carrossel/yuki%20best%20vr.png" width="198" height="250" href="" data-bs-target="#modal-1" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="" data-bs-target="#modal-1" data-bs-toggle="modal">YUKI MR MODE</a></h4>
+                        <p style="width: 300px;">YUKI is an upbeat mix of the bullet-hell and roguelike game genres in VR, set in an incredible anime universe. Step into the imagination of a child and fly through multidimensional worlds holding her favorite action character, Yuki. Use your hands to fly Yuki and dodge loads of bullets and obstacles that cross your path!&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-10 col-xxl-6" data-bss-hover-animate="pulse" style="width: 990px;">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100" style="width: 1000px;height: 250px;"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 100%;padding-right: 0px;padding-bottom: 0px;/*width: 200px;*/" src="assets/img/Games/Carrossel/pixel%20holoride.png" width="135" height="200" href="" data-bs-target="#modal-2" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-2" data-bs-toggle="modal">Pixel Ripped 1995 - On the Road</a></h4>
+                        <p style="width: 300px;">Dot needs David's help again, this time to save her friends from Cyblin Lord’s suspicious birthday party, maleficently planned by himself. A brand new and unique adventure made for the Holoride platform, Pixel Ripped 1995: On the Road adds a new twist to the classic 2D-platformer as it takes place in a real car!<br><br><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    
-<header data-bs-theme="dark">
-  <div class="collapse text-bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4>About</h4>
-          <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2>Personal Projects</h2>
+                <p class="w-lg-50">Game Jams, College and prototypes</p>
+            </div>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4>Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
+        <div class="row gy-5 row-cols-1 row-cols-md-2">
+            <div class="col" data-bss-hover-animate="pulse">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/Games/Projects/Banner_Artfinal.png" width="198" height="200" href="" data-bs-target="#modal-3" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-3" data-bs-toggle="modal">Jello Quest</a></h4>
+                        <p style="width: 300px;">A mysterious infection is transforming the jellies into hideous creatures.<br>Adventure through the universe of Jello Quest and save your gelatinous companions as you try to discover what is happening with the sweet kingdom.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-bss-hover-animate="pulse">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/Games/Projects/Magic%20Realm.png" href="" data-bs-target="#modal-4" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-4" data-bs-toggle="modal">Magic Realm</a></h4>
+                        <p style="width: 300px;">Magic Realm is a 3D RTS, with low poly graphics, where you control all strategies in your battle against magic.<br>This game was produced as a project to conclude the Digital Games course for FATEC Americana.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-bss-hover-animate="pulse">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/Games/Projects/Kitty%20Cubes.png" href="" data-bs-target="#modal-6" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-6" data-bs-toggle="modal">Kitty Cubes</a></h4>
+                        <p style="width: 300px;">Help the cat to push his box into the right place and go to the next level.<br>Take on these challenges in a simple and relaxing way. You can change the music and also choose the skin you prefer for your cat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-bss-hover-animate="pulse">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/Games/Projects/VOCÊ.png" href="" data-bs-target="#modal-5" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-5" data-bs-toggle="modal">VOCÊ.</a></h4>
+                        <p style="width: 300px;">A simulation of a person's daily life and their recurring activities, where each choice affects levels of quality of your life.<br>This game is developed for BGS Jam 2020.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-bss-hover-animate="pulse">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/Games/Projects/Tamagotchi.png" href="" data-bs-target="#modal-7" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-7" data-bs-toggle="modal">Tamagotchi Hell</a></h4>
+                        <p style="width: 300px;">Remember the time when you couldn't stop thinking about the good old bullet hells you played on a tamagotchi?... Well, neither i but what about being locked inside one while you try to keep yourself alive? This game is developed for Bullet Hell Jam 2022.<br><br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-bss-hover-animate="pulse">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="w-100"><img class="rounded img-fluid d-block w-100 fit-cover" style="height: 200px;" src="assets/img/Games/Projects/Keep%20on%20Rolling.jpg" href="" data-bs-target="#modal-8" data-bs-toggle="modal"></div>
+                    <div class="py-4 py-lg-0 px-lg-4">
+                        <h4><a href="#" data-bs-target="#modal-8" data-bs-toggle="modal">Keep on Rolling</a></h4>
+                        <p style="width: 300px;">Help our dung beetles carry their dung heaps to the dung temple! Each level you complete brings a new challenge, new beetles and a greater amount of dung that will make the trajectory of our husky heroes. This game is develop for Ludijam.<br><br></p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Album</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h4 class="modal-title">YUKI MR MODE</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/xJRKuN_MmFE" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button" style="background: var(--bs-btn-border-color);">Game Designer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Responsabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center" style="margin: auto;margin-left: auto;">Balancing<br>Portals Design&nbsp;<br>Enemies Bullets<br>Pod Punch<br>Bonus Wave&nbsp;<br>PowerUp Systems&nbsp;<br><br></p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 105px;height: 75px;background: url(&quot;assets/img/Platforms/Meta_Quest_logo.svg.png&quot;) center / contain no-repeat;border-style: none;" onclick="window.open(&#39;https://www.meta.com/pt-pt/experiences/2886115781495034/&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
     </div>
-  </div>
-</header>
-
-<main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
-        <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-2">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h4 class="modal-title">Pixel Ripped 1995 - On The Road</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/aW7YlHHIDJI" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button">Game Designer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Responsabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Level Design<br>Juiciness<br>Demo&nbsp;<br>Documentation<br><br></p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/Holoride_GmbH_Masterbrand_RGB.png&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://www.holoride.com/en/library/pixel-ripped-1995&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
     </div>
-  </section>
-
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-9">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h4 class="modal-title">Universal Monsters Arena</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/1JNSrYA1vSE" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button">Game Designer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Responsabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Gameplay (Monsters Skills, Status, Levolution and Ancient Power)<br>Level Design (All arenas)<br>Balacing<br>Documentation (GDD)<br>Post-Launch</p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 105px;height: 75px;background: url(&quot;assets/img/Platforms/Meta_Quest_logo.svg.png&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://horizon.meta.com/world/290377726946495&#39;,&#39;mywindow&#39;);"></a>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
             </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-body-secondary">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-3">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header fw-bold border-0">
+                    <h4 class="modal-title">Jello Quest</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/Q98YWXrKC4Q" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Game Designer</button><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin: auto;">Tech Artist</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Resposabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Game Design (Mechanics, PowerUps and enemies)<br>Level Design<br>Documentation<br>Menu<br>User Experience<br>HUD<br><br></p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/itchio-textless-white.svg&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://leodantas.itch.io/jello-quest-blob-war&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-4">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header fw-bold border-0">
+                    <h4 class="modal-title">Magic Realm</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/S-PvEYTEAC8" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Game Designer</button><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin: auto;">Producer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Resposabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Game Design (Mechanics, enemies, troops and builds)<br>Level Design<br>Documentation<br>Menu<br>UX/UI<br>VFX<br><br></p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/itchio-textless-white.svg&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://leodantas.itch.io/magic-realm-tcc&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-6">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header fw-bold border-0">
+                    <h4 class="modal-title">Kitty Cubes</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Game Designer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Resposabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Game Design (Puzzles)<br>Level Design<br>Menu<br>UX/UI</p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/itchio-textless-white.svg&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://sollarium-studio.itch.io/kitty-cubes&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-5">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header fw-bold border-0">
+                    <h4 class="modal-title">VOCÊ.</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/XzwdYjQ3whE" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Game Designer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Resposabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Game Design (Mechanics and progression)<br>Balacing</p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/itchio-textless-white.svg&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://leodantas.itch.io/voce&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-7">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header fw-bold border-0">
+                    <h4 class="modal-title">Tamagotchi Hell</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/m5zW1DFpR0c" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Game Designer</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Resposabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Game Design (Mechanics, Power Ups and Enemies)<br>Balacing<br>Menu</p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/itchio-textless-white.svg&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://sollarium-studio.itch.io/tamagotchi-hell&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-8">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header fw-bold border-0">
+                    <h4 class="modal-title">Keep on Rolling</h4><button class="btn-close btn-close-white" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center"><iframe class="d-xl-flex align-items-center mx-auto justify-content-xl-center align-items-xl-center" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/SuZEKNEuOPQ" width="560" height="315" style="padding-bottom: 0px;margin: auto;margin-bottom: 33px;max-height: 315px;max-width: 560px;min-height: 150px;min-width: 300px;"></iframe><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Game Designer</button><button class="btn btn-primary text-center border rounded-pill" type="button" style="margin-right: 5px;">Tech Artist</button>
+                    <h2 class="text-center" style="margin-top: 12px;">Resposabilities</h2>
+                    <p class="text-center d-xxl-flex justify-content-xxl-center">Game Design (Mechanics and puzzles)<br>Level Design<br>Menu<br>UX/UI<br>HUD (Programming and implemation)<br>Asset integration (pipeline, 2D and 3D)</p>
+                    <h2 class="text-center">Platforms</h2><a class="btn btn-primary" role="button" style="width: 50px;height: 50px;background: url(&quot;assets/img/Platforms/itchio-textless-white.svg&quot;) center / contain no-repeat;border-style: none;position: static;" onclick="window.open(&#39;https://sollarium-studio.itch.io/keep-on-rolling&#39;,&#39;mywindow&#39;);"></a>
+                </div>
+                <div class="modal-footer d-none"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center py-4">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-3">
+                <div class="col">
+                    <p class="text-muted my-2"></p>
+                </div>
+                <div class="col">
+                    <ul class="list-inline my-2">
+                        <li class="list-inline-item me-4">
+                            <div class="bs-icon-circle bs-icon-primary bs-icon" onclick="window.open(&#39;https://www.linkedin.com/in/leonardo-dantass/&#39;,&#39;mywindow&#39;);" style="width: 36px;height: 36px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin" style="font-size: 12px;width: 20px;height: 20px;">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"></path>
+                                </svg></div>
+                        </li>
+                        <li class="list-inline-item me-4" onclick="window.open(&#39;https://twitter.com/ldgamedev&#39;,&#39;mywindow&#39;);">
+                            <div class="bs-icon-circle bs-icon-primary bs-icon" style="width: 36px;height: 36px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-twitter" style="width: 20px;height: 20px;">
+                                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15"></path>
+                                </svg></div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="bs-icon-circle bs-icon-primary bs-icon" onclick="window.open(&#39;https://leodantas.itch.io&#39;,&#39;mywindow&#39;);" style="width: 36px;height: 36px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-controller" style="width: 20px;height: 20px;">
+                                    <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1"></path>
+                                    <path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z"></path>
+                                </svg></div>
+                        </li>
+                    </ul>
+                    <p class="text-muted my-2" style="padding-top: 10px;">Copyright&nbsp;© 2024 Made by Gustavo Vianna</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/Simple-Slider-swiper-bundle.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
 
-</main>
-
-<footer class="text-body-secondary py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer>
-<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    </body>
 </html>
